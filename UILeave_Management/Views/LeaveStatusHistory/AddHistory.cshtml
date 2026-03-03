@@ -1,0 +1,19 @@
+﻿@model UILeave_Management.Models.LeaveStatusHistory
+
+<div class="container mt-5" style="width:400px;">
+    <h2 class="text-center">Add Leave Status History</h2>
+
+    @if (ViewBag.Msg != null)
+    {
+        <div class="alert alert-info text-center">@ViewBag.Msg</div>
+    }
+
+    <form method="post" action="/LeaveStatusHistoryMVC/AddHistory">
+        <input type="number" name="LeaveId" placeholder="Enter Leave ID" class="form-control mb-3" required />
+        <input type="number" name="UpdatedBy" placeholder="Enter Updated By (User ID)" class="form-control mb-3" required />
+        <input type="text" name="OldStatus" placeholder="Enter Old Status" class="form-control mb-3" required />
+        <input type="text" name="NewStatus" placeholder="Enter New Status" class="form-control mb-3" required />
+
+        <button class="btn btn-primary w-100">Submit</button>
+    </form>
+</div>

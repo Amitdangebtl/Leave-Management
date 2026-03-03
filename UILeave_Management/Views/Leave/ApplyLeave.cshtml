@@ -1,0 +1,20 @@
+﻿@model UILeave_Management.Models.LeaveRequest
+
+<div class="container mt-5" style="width:400px;">
+    <h2 class="text-center">Apply for Leave</h2>
+
+    @if (ViewBag.Msg != null)
+    {
+        <div class="alert alert-info text-center">@ViewBag.Msg</div>
+    }
+
+    <form method="post" action="/LeaveRequestMVC/ApplyLeave">
+        <input type="number" name="UserId" placeholder="Enter User ID" class="form-control mb-3" required />
+        <input type="text" name="LeaveType" placeholder="Leave Type" class="form-control mb-3" required />
+        <input type="date" name="StartDate" class="form-control mb-3" required />
+        <input type="date" name="EndDate" class="form-control mb-3" required />
+        <input type="text" name="Reason" placeholder="Reason" class="form-control mb-3" required />
+
+        <button class="btn btn-primary w-100">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+﻿@model UILeave_Management.Models.User
+
+<div class="container mt-5" style="width:380px;">
+    <h2 class="text-center">User Login</h2>
+
+    @if (ViewBag.Msg != null)
+    {
+        <div class="alert alert-danger text-center">@ViewBag.Msg</div>
+    }
+
+    <form method="post" action="/UserMVC/Login">
+        <input type="text" name="Email" placeholder="Enter Email" class="form-control mb-3" required />
+        <input type="password" name="Password" placeholder="Enter Password" class="form-control mb-3" required />
+
+        <button class="btn btn-primary w-100">Login</button>
+    </form>
+</div>

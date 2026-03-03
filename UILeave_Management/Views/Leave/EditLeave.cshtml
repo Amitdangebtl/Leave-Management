@@ -1,0 +1,22 @@
+﻿@model UILeave_Management.Models.LeaveRequest
+
+<div class="container mt-5" style="width:420px;">
+    <h2 class="text-center">Edit Leave</h2>
+
+    @if (ViewBag.Msg != null)
+    {
+        <div class="alert alert-warning text-center">@ViewBag.Msg</div>
+    }
+
+    <form method="post" action="/LeaveRequestMVC/EditLeave">
+        <input type="hidden" name="LeaveId" value="@ViewBag.LeaveId" />
+
+        <input type="text" name="LeaveType" placeholder="Leave Type" class="form-control mb-3" required />
+        <input type="date" name="StartDate" class="form-control mb-3" required />
+        <input type="date" name="EndDate" class="form-control mb-3" required />
+        <input type="text" name="Reason" placeholder="Reason" class="form-control mb-3" required />
+        <input type="text" name="Status" placeholder="Status" class="form-control mb-3" required />
+
+        <button class="btn btn-dark w-100">Update</button>
+    </form>
+</div>

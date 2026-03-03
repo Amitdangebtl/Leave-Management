@@ -1,0 +1,13 @@
+﻿<div class="container mt-5" style="width:400px;">
+    <h2 class="text-center">Search Leave History</h2>
+
+    <form method="post" action="/LeaveStatusHistoryMVC/SearchByLeave">
+        <input type="number" name="leaveId" placeholder="Enter Leave ID" class="form-control mb-3" required />
+        <button class="btn btn-dark w-100">Search</button>
+    </form>
+
+    @if (ViewBag.Result != null)
+    {
+        <div class="alert alert-warning mt-3">@ViewBag.Result</div>
+    }
+</div>

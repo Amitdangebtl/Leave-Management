@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "Leave_ManagementAPI\\Leave_ManagementAPI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "UILeave_Management\\UILeave_Management.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

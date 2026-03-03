@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Leave Management Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+
+    <!-- HEADER -->
+    <div class="text-center mb-5">
+        <h1 class="fw-bold" style="color:#112D6B; font-size:32px;">Leave Management System</h1>
+        <p style="color:#555;">User • Leave • History Management (API Powered)</p>
+    </div>
+
+    <!-- ALERT MESSAGE -->
+    @if (TempData["Msg"] != null)
+    {
+        <script>alert('@TempData["Msg"]');</script>
+    }
+
+    <!-- DASHBOARD CARDS -->
+    <div class="row g-4">
+
+        <!-- USER MANAGEMENT -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 p-3">
+                <h4 class="fw-bold" style="color:#112D6B;">User Management</h4>
+                <p>Manage system users and roles</p>
+                <a href="/UserMVC/UserListView" class="btn w-100 mb-2" style="background:#0A1F44; color:white;">View Users</a>
+                <a href="/UserMVC/AddUserView" class="btn btn-success w-100">Add New User</a>
+            </div>
+        </div>
+
+        <!-- LEAVE REQUEST MANAGEMENT -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 p-3">
+                <h4 class="fw-bold" style="color:#112D6B;">Leave Requests</h4>
+                <p>Apply, edit, approve or delete leave</p>
+                <a href="/LeaveRequestMVC/LeaveListView" class="btn w-100 mb-2" style="background:#0A1F44; color:white;">View Leave Requests</a>
+                <a href="/LeaveRequestMVC/ApplyLeaveView" class="btn btn-info w-100">Apply for Leave</a>
+            </div>
+        </div>
+
+        <!-- LEAVE HISTORY -->
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 rounded-4 p-3">
+                <h4 class="fw-bold" style="color:#112D6B;">Leave History</h4>
+                <p>Track leave approval status changes</p>
+                <a href="/LeaveStatusHistoryMVC/HistoryListView" class="btn w-100 mb-2" style="background:#0A1F44; color:white;">View Status History</a>
+                <a href="/LeaveStatusHistoryMVC/AddHistoryView" class="btn btn-warning w-100">Add History</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- EXTRA SECTION LIKE REAL WEBSITE -->
+    <div class="mt-5 p-4 rounded-4 shadow-sm" style="background:rgba(17,45,107,0.05);">
+        <h3 class="fw-bold mb-3" style="color:#112D6B;">Quick Actions</h3>
+
+        <div class="row g-3">
+
+            <div class="col-md-6">
+                <a href="/UserMVC/UpdateUserView?id=1" class="btn btn-outline-primary w-100">Edit User (Sample)</a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="/LeaveRequestMVC/EditLeaveView?id=1" class="btn btn-outline-secondary w-100">Edit Leave (Sample)</a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="/LeaveRequestMVC/LeaveDetailView?leaveId=1" class="btn btn-outline-success w-100">View Leave Details (Sample)</a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="/LeaveStatusHistoryMVC/HistoryDetailView?historyId=1" class="btn btn-outline-danger w-100">View History Details (Sample)</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="text-center mt-5">
+    <p style="color:#888;">© 2026 Leave Management System </p>
+</div>

@@ -1,0 +1,55 @@
+﻿@model List<UILeave_Management.Models.LeaveRequest>
+
+<div class="container mt-4">
+    <h2 class="text-center">Leave Requests</h2>
+
+    @if (Model != null && Model.Count > 0)
+    {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>LeaveId</th>
+                    <th>UserId</th>
+                    <th>LeaveType</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Reason</th>
+                    <th>Status</th>
+                    <th>AppliedOn</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>@Model[i].LeaveId</td>
+                        <td>@Model[i].UserId</td>
+                        <td>@Model[i].LeaveType</td>
+                        <td>@Model[i].StartDate</td>
+                        <td>@Model[i].EndDate</td>
+                        <td>@Model[i].Reason</td>
+                        <td>@Model[i].Status</td>
+                        <td>@Model[i].AppliedOn</td>
+                        <td>
+                            <a href="/LeaveRequestMVC/LeaveDetailView?leaveId=@Model[i].LeaveId" class="btn btn-secondary btn-sm">View</a>
+                            <a href="/LeaveRequestMVC/EditLeaveView?id=@Model[i].LeaveId" class="btn btn-warning btn-sm">Edit</a>
+                            <a href="/LeaveRequestMVC/DeleteLeave?leaveId=@Model[i].LeaveId" class="btn btn-danger btn-sm">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <h4 class="text-center text-danger">No Leave Found ❗</h4>
+    }
+
+    <a href="/LeaveRequestMVC/ApplyLeaveView" class="btn btn-success">Apply Leave</a>
+</div>
+
+@if (TempData["Msg"] != null)
+{
+    <script>alert('@TempData["Msg"]');</script>
+}
